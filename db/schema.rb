@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190629041818) do
+ActiveRecord::Schema.define(version: 20191123203341) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "email"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20190629041818) do
     t.text     "notes",        limit: 2147483647
     t.datetime "created_at",                                              null: false
     t.datetime "updated_at",                                              null: false
+    t.image    "legacy_photo", limit: 2147483647
   end
 
   create_table "reviews", force: :cascade do |t|
