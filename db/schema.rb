@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191123203341) do
+ActiveRecord::Schema.define(version: 20191123214833) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "email"
@@ -42,14 +42,16 @@ ActiveRecord::Schema.define(version: 20191123203341) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name",         limit: 50
-    t.boolean  "relevant"
-    t.decimal  "score",                           precision: 4, scale: 3
-    t.decimal  "market_value",                    precision: 6, scale: 2
-    t.text     "notes",        limit: 2147483647
-    t.datetime "created_at",                                              null: false
-    t.datetime "updated_at",                                              null: false
-    t.image    "legacy_photo", limit: 2147483647
+    t.string         "name",         limit: 50
+    t.boolean        "relevant"
+    t.decimal        "score",                           precision: 4, scale: 3
+    t.decimal        "market_value",                    precision: 6, scale: 2
+    t.text           "notes",        limit: 2147483647
+    t.datetime       "created_at",                                              null: false
+    t.datetime       "updated_at",                                              null: false
+    t.image          "legacy_photo", limit: 2147483647
+    t.datetime_basic "available_at"
+    t.datetime_basic "expires_at"
   end
 
   create_table "reviews", force: :cascade do |t|
